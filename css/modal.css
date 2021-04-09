@@ -1,0 +1,95 @@
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+
+  z-index: 10000;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal img {
+  padding: 20px;
+  animation: animeModal 0.5s forwards;
+}
+
+@keyframes animeModal {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX();
+  }
+}
+
+.close-modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 2.5em;
+  background: rgba(0, 0, 0, 0.5);
+  color: #40c1ac;
+  font-weight: bold;
+  border: none;
+  border: 3px solid #40c1ac;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.close-modal.show {
+  display: flex;
+  animation: animeCloseModal 0.5s forwards;
+}
+
+@keyframes animeCloseModal {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX();
+  }
+}
+
+@media (max-width: 950px) {
+  .close-modal {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 1.8em;
+  }
+
+  .close-modal.show {
+    display: flex;
+    animation: animeCloseModal 0.5s forwards;
+  }
+}

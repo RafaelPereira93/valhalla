@@ -1,0 +1,220 @@
+.hero {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  top: 0;
+  background: url("../images/bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: 50px;
+  background-position-x: 60%;
+  overflow: hidden;
+}
+
+.hero.hidden {
+  animation: animateHero 1s forwards;
+}
+
+@keyframes animateHero {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.hero .content-hero {
+  position: relative;
+  padding-top: 200px;
+  left: 10%;
+  width: 90%;
+}
+
+.hero .content-hero.hidden {
+  animation: animateContentHero 1s forwards;
+}
+
+@keyframes animateContentHero {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    left: -100%;
+  }
+}
+
+.hero .content-hero h2 {
+  color: #eee;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.hero .content-hero h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 5.8em;
+  color: #40c1ac;
+  text-transform: uppercase;
+}
+
+.content-hero h1 span {
+  font-family: "Times New Roman", Times, serif;
+  color: #eee;
+}
+
+.content-hero .release-date {
+  color: #eee;
+  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.content-hero p {
+  font-family: "Poppins", sans-serif;
+  color: #bbb;
+  max-width: 450px;
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.content-hero a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  padding: 8px 0;
+  background: #40c1ac;
+  color: #fff;
+  border: 2px solid #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  margin-top: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.content-hero a:after {
+  content: "";
+  position: absolute;
+  left: -100px;
+  display: inline-block;
+  width: 50%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(20deg);
+  transition: 0.8s;
+  z-index: -1;
+}
+
+.content-hero a:hover:after {
+  left: 300px;
+}
+
+.content-hero a:hover {
+  background: #1b6a63;
+}
+
+.trailer-and-images.hidden {
+  animation: animateTrailer 0.8s forwards;
+}
+
+@keyframes animateTrailer {
+  to {
+    transform: translateX(200%);
+  }
+}
+
+.trailer-and-images .content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-top: 100px;
+  padding-bottom: 80px;
+}
+
+.trailer-and-images .trailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.trailer-and-images .trailer img {
+  cursor: pointer;
+}
+
+.content .images img {
+  cursor: pointer;
+  filter: grayscale(100%) sepia(50%) hue-rotate(150deg);
+  transition: 0.3s ease-out;
+}
+
+.content .images img:hover {
+  filter: none;
+}
+
+.trailer-and-images .content .images {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 10px;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.content .images::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+.content .images::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* Handle */
+.content .images::-webkit-scrollbar-thumb {
+  background: #40c1ac;
+  border-radius: 20px;
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  .hero {
+    background-size: cover;
+    background-position: 60% 50px;
+    overflow: hidden;
+  }
+
+  .hero .content-hero {
+    padding-top: 200px;
+  }
+
+  .hero .content-hero h2 {
+    font-size: 1.5em;
+  }
+
+  .hero .content-hero h1 {
+    font-size: 2em;
+    margin-top: 10px;
+  }
+
+  .content-hero .release-date {
+    margin: 30px 0;
+    font-size: 1em;
+  }
+
+  .content-hero p {
+    font-size: 1em;
+  }
+
+  .trailer-and-images {
+    display: none;
+  }
+
+  .content-hero a {
+    margin-bottom: 40px;
+  }
+}
